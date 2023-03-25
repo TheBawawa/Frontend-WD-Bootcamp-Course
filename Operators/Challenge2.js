@@ -15,4 +15,4 @@ const SecondNumber = '20';
 const Result = FirstNumber === SecondNumber;
 console.log(Result);
 
-// They are basically the same snippet. Would recommend either i guess
+// They are basically the same snippet. Would recommend either, but instead of a string I would put all values in numbers
