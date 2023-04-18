@@ -19,5 +19,21 @@ Our team always plays 10 matches in the championship
 */
 
 function points(games) {
-    return 0;
+  let totalPoints = 0;
+
+  for (let i = 0; i < games.length; i++) {
+    let value = games[i];
+    let parts = value.split(":");
+
+    let x = parts[0];
+    let y = parts[1];
+
+    if (x > y) {
+      totalPoints += 3;
+    }
+    else if (x === y) {
+      totalPoints += 1;
+    }
   }
+  return totalPoints;
+}
