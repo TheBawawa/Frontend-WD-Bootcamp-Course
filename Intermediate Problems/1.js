@@ -5,6 +5,6 @@ and returns a new list with the strings filtered out.
 */
 
 function filter_list(list) {
-    let newList = list.filter(el => typeof el == number);
+    let newList = list.filter(el => typeof el == 'number');
     return newList;
 }
