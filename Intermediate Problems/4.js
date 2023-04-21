@@ -8,3 +8,38 @@ You always walk only a single block for each letter (direction) and you know it 
 so create a function that will return true if the walk the app gives you will take you exactly ten minutes (you don't want to be early or late!) 
 and will, of course, return you to your starting point. Return false otherwise.
 */
+
+function isValidWalk(walk) {
+    if (walk.length != 10){
+      return false;
+    }
+    
+    let northSteps = 0;
+    let southSteps = 0;
+    let westSteps = 0;
+    let eastSteps = 0;
+    
+    walk.forEach(direction => {
+      switch(direction){
+            case 'n':
+                northSteps += 1;
+                break;
+            case 's':
+                southSteps += 1;
+                break;
+            case 'w':
+                westSteps += 1;
+                break;
+            case 'e':
+                eastSteps += 1;
+                break;
+      }
+    })
+
+    if(northSteps - southSteps == 0 && westSteps - eastSteps == 0){
+        return true;
+    }
+    else {
+        return false;
+    }
+  }
