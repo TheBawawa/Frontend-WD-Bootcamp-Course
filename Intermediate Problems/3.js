@@ -5,21 +5,25 @@ which is the number of times you must multiply the digits in num until you reach
 */
 
 function persistence(num) {
-    let strNum = num.toString();
-    let arrNum = strNum.split("");
-    let newArr = [];
-    arrNum.forEach(number => newArr.push(parseInt(number)))
-    //console.log(newArr);
 
-    let persistence = null;
-    let multiply = null;
-    do {
+    let result = 0;
+    //let persistence = null;
+
+    while(num > 9){
+        let multiply = 1;
+        let strNum = num.toString();
+        let arrNum = strNum.split("");
+        let newArr = [];
+        arrNum.forEach(number => newArr.push(parseInt(number)))
+        console.log(arrNum)
         for (let i = 0; i < newArr.length; i++){
             multiply *= newArr[i];
         }
-    } while (newArr.length > 1);
+        num = multiply;
+        result++;
+    }
 
-    return persistence;
+    return result;
  }
 
- console.log(persistence(123))
+ console.log(persistence(7587793))
